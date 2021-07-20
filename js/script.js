@@ -34,30 +34,43 @@
 
 
 var studenti = [
-    studente1 = {
-
-        nome: 'billi',
-        cognome: 'bruno',
-        age: 18,
-
-
+    {
+        nome: 'studente 1',
+        nome_studente: 'Luca',
+        cognome: 'Pina',
+        age: 24,
     },
-    studente2 = {
+    {
 
-        nome: 'alex',
-        cognome: 'pina',
-        age: 23,
+        nome: 'studente 2',
+        nome_studente: 'Fabio',
+        cognome: 'Molteni',
+        age: 20,
+    },
+    {
+        nome: 'studente 3',
+        nome_studente: 'Michela',
+        cognome: 'Lori',
+        age: 19,
+    },
+];
+
+// studenti = document.getElementById('demo');
+
+var oggetto_studente = [
+    {
+        nome: prompt('Inserisci il nome'),
+        cognome: prompt('Inserisci il cognome'),
+        eta: parseInt(prompt("Inserisci l'età")),
 
     },
 ];
 
-var utente3 = {
-    nome: prompt('Inserisci il nome'),
-    cognome: prompt('Inserisci il cognome'),
-    eta: prompt("Inserisci l'età"),
-
-};
-
-console.log(studenti[0][0]);
-console.log(studenti[1][0]);
-console.log(utente3);
+console.log(studenti[0].nome_studente);
+console.log(studenti[0].cognome);
+console.log(studenti[1].nome_studente);
+console.log(studenti[1].cognome);
+console.log(studenti[2].nome_studente);
+console.log(studenti[2].cognome);
+console.log(oggetto_studente[0].nome);
+console.log(oggetto_studente[0].cognome);

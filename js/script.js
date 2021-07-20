@@ -36,14 +36,14 @@
 var studenti = [
     {
         nome: 'studente 1',
-        nome_studente: 'Luca',
+        firstName: 'Luca',
         cognome: 'Pina',
         age: 24,
     },
     {
 
         nome: 'studente 2',
-        nome_studente: 'Fabio',
+        firstName: 'Fabio',
         cognome: 'Molteni',
         age: 20,
     },
@@ -53,9 +53,15 @@ var studenti = [
         cognome: 'Lori',
         age: 19,
     },
+
+
+
 ];
 
-// studenti = document.getElementById('demo');
+// // document.getElementById("demo").innerHTML = studenti[0] + "" + studenti.length;
+// document.getElementById("demo").innerHTML = studenti.nome_studente;
+document.getElementById("demo").innerHTML = studenti.firstName;
+
 
 var oggetto_studente = [
     {
@@ -66,9 +72,9 @@ var oggetto_studente = [
     },
 ];
 
-console.log(studenti[0].nome_studente);
+console.log(studenti[0].firstName);
 console.log(studenti[0].cognome);
-console.log(studenti[1].nome_studente);
+console.log(studenti[1].firstName);
 console.log(studenti[1].cognome);
 console.log(studenti[2].nome_studente);
 console.log(studenti[2].cognome);

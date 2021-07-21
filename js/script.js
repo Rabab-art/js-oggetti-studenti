@@ -5,23 +5,22 @@
 // in tutte le proprietà dell'oggetto.
 
 // var studente = {
-//     "altezza": 1.90,
-//     "colore-occhi": ['verde', 'grigio'],
-//     fisico: 'sportivo',
-//     capelli: 'ricci'
+
+//     nome: 'Luca',
+//     cognome: 'Pina',
+//     age: 29,
 // };
 
-
-
+// var utente = '';
 
 // for (var key in studente) {
 //     console.log(studente[key]);
+//     utente += key + '=' + studente[key] + ', ';
 // };
 
-// for (i = 0; i < studente.lenght; i++) {
-//     document.getElementById("demo");
+// document.getElementById('demo').innerHTML = utente;
 
-// };
+
 
 
 // // ES 2
@@ -49,7 +48,7 @@ var studenti = [
     },
     {
         nome: 'studente 3',
-        nome_studente: 'Michela',
+        firstName: 'Michela',
         cognome: 'Lori',
         age: 19,
     },
@@ -58,25 +57,53 @@ var studenti = [
 
 ];
 
-// // document.getElementById("demo").innerHTML = studenti[0] + "" + studenti.length;
-// document.getElementById("demo").innerHTML = studenti.nome_studente;
-document.getElementById("demo").innerHTML = studenti.firstName;
+var doc = stampaList(studenti);
+
+document.getElementById('demo').innerHTML = doc;
 
 
-var oggetto_studente = [
-    {
-        nome: prompt('Inserisci il nome'),
-        cognome: prompt('Inserisci il cognome'),
-        eta: parseInt(prompt("Inserisci l'età")),
+var nome = prompt('Inserisci numero studente ');
+var firstName = prompt('Inserisci il cognome');
+var cognome = prompt('Inserisci il conogme');
+var age = parseInt(prompt('Inserisci gli anni'));
 
-    },
-];
 
-console.log(studenti[0].firstName);
-console.log(studenti[0].cognome);
-console.log(studenti[1].firstName);
-console.log(studenti[1].cognome);
-console.log(studenti[2].nome_studente);
-console.log(studenti[2].cognome);
-console.log(oggetto_studente[0].nome);
-console.log(oggetto_studente[0].cognome);
+
+var newstudente = {
+
+    nome: nome,
+    firstName: firstName,
+    cognome: cognome,
+    age: age,
+};
+
+studenti.push(newstudente);
+var testo = stampaList(studenti);
+
+
+
+
+document.getElementById('dopo').innerHTML = testo;
+
+
+
+
+function stampaList(studenti) {
+    var utente = '';
+
+    for (var i = 0; i < studenti.length; i++) {
+        var studente = studenti[i];
+        utente += '<ul>';
+        for (var key in studente) {
+            console.log(studente[key]);
+            if (key == 'firstName' || key == 'cognome') {
+
+                utente += '<li>' + key + '=' + studente[key] + '</li>';
+            }
+        };
+        utente = utente + '</ul>';
+
+    }
+    // utente += '</ul>';
+    return utente;
+}
